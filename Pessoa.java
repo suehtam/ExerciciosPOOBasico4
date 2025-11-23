@@ -1,4 +1,4 @@
-package Questao3;
+package pessoas;
 public class Pessoa
 {
     private String nome;
@@ -6,7 +6,7 @@ public class Pessoa
     public Pessoa(String nome, int idade)
     {
         this.nome = nome;
-        setIdade(idade);
+        this.idade = idade;
     }
     public String getNome()
     {
@@ -25,10 +25,9 @@ public class Pessoa
         if (idade >= 0)
         {
             this.idade = idade;
-        }
-        else
+        } else
         {
-            System.out.println("Idade inválida! Não pode ser menor que 0.");
+            System.out.println("Idade inválida! Não pode ser negativa.");
         }
     }
 }
