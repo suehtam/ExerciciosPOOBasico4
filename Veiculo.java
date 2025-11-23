@@ -1,35 +1,23 @@
-package Questao2;
+package transporte;
 public class Veiculo
 {
-    protected int velocidade;
-    public Veiculo()
+    protected int velocidadeMaxima;
+    public Veiculo(int velocidadeMaxima)
     {
-        this.velocidade = 0;
+        this.velocidadeMaxima = velocidadeMaxima;
     }
-    public void acelerar() {
-        if (velocidade < 200)
-        {
-            velocidade += 10;
-            System.out.println("Acelerando... Velocidade atual: " + velocidade);
+    public int getVelocidadeMaxima()
+    {
+        return velocidadeMaxima;
+    }
+    public void setVelocidadeMaxima(int velocidadeMaxima)
+    {
+        if (velocidadeMaxima > 0) {
+            this.velocidadeMaxima = velocidadeMaxima;
         }
         else
         {
-            System.out.println("Velocidade máxima atingida!");
-        }
-    }
-    public void frear()
-    {
-        if (velocidade > 0) {
-            velocidade -= 10;
-            if (velocidade < 0)
-            {
-                velocidade = 0;
-            }
-            System.out.println("Freando... Velocidade atual: " + velocidade);
-        }
-        else
-        {
-            System.out.println("O veículo já está parado.");
+            System.out.println("Velocidade máxima inválida!");
         }
     }
 }

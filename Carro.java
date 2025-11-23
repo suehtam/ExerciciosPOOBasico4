@@ -1,45 +1,23 @@
-package Questao2;
+package transporte;
 public class Carro extends Veiculo
 {
-    private boolean ligado;
-    private int combustivel;
-    public Carro()
+    private String modelo;
+    public Carro(String modelo, int velocidadeMaxima)
     {
-        super();
-        this.ligado = false;
-        this.combustivel = 0;
+        super(velocidadeMaxima);
+        this.modelo = modelo;
     }
-    public void ligar()
+    public String getModelo()
     {
-        if (combustivel > 0)
-        {
-            ligado = true;
-            System.out.println("Carro ligado!");
-        } else
-        {
-            System.out.println("Não há combustível para ligar o carro.");
-        }
+        return modelo;
     }
-    public void desligar()
+    public void setModelo(String modelo)
     {
-        ligado = false;
-        System.out.println("Carro desligado.");
+        this.modelo = modelo;
     }
-    public void abastecer(int qtd)
+    public void exibirDetalhes()
     {
-        combustivel += qtd;
-        System.out.println("Carro abastecido. Combustível atual: " + combustivel);
-    }
-    public void acelerarCarro()
-    {
-        if (ligado && combustivel > 0)
-        {
-            super.acelerar();
-            combustivel--;
-        }
-        else
-        {
-            System.out.println("Não é possível acelerar. Carro desligado ou sem combustível.");
-        }
+        System.out.println("Modelo: " + modelo);
+        System.out.println("Velocidade Máxima: " + getVelocidadeMaxima() + " km/h");
     }
 }
